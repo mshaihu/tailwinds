@@ -7,28 +7,21 @@
     <link rel="stylesheet" href="output.css" />
   </head>
   <body>
-    <div class="box"></div>
-    <style>
-      .box {
-        height: 200px;
-        width: 200px;
-        background: steelblue;
-        border: 2px solid green;
-        animation: wipe-out-top-left 3s infinite;
-      }
-      @keyframes wipe-out-top-left {
-        from {
-          clip-path: polygon(-50% 0%, 200% 0, 0 200%, 0 -50%);
-        }
-        to {
-          clip-path: polygon(0 0, 0 0, 0 0, 0 50%);
-        }
-      }
-
-      [transition-style="out:wipe:top-left"] {
-        animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-out-top-left both;
-      }
-    </style>
+    <div class="grid grid-cols-6 text-center gap-1">
+      <div class="col-span-6 bg-blue-500" style="height: 50px">Header</div>
+      <div class="col-span-2 bg-red-400" style="height: 300px">Aside</div>
+      <div class="col-span-4 bg-pink-500" style="height: 300px">Main</div>
+      <div class="col-span-2 bg-yellow-500" style="height: 200px">
+        Section 1
+      </div>
+      <div class="col-span-2 bg-yellow-500" style="height: 200px">
+        Section 2
+      </div>
+      <div class="col-span-2 bg-yellow-500" style="height: 200px">
+        Section 3
+      </div>
+      <div class="col-span-6 bg-green-500" style="height: 250px">Footer</div>
+    </div>
     <script src="/src/script.js"></script>
   </body>
 </html>
