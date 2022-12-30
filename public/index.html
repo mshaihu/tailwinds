@@ -1,0 +1,34 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body>
+    <div class="box"></div>
+    <style>
+      .box {
+        height: 200px;
+        width: 200px;
+        background: steelblue;
+        border: 2px solid green;
+        animation: wipe-out-top-left 3s infinite;
+      }
+      @keyframes wipe-out-top-left {
+        from {
+          clip-path: polygon(-50% 0%, 200% 0, 0 200%, 0 -50%);
+        }
+        to {
+          clip-path: polygon(0 0, 0 0, 0 0, 0 50%);
+        }
+      }
+
+      [transition-style="out:wipe:top-left"] {
+        animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-out-top-left both;
+      }
+    </style>
+    <script src="/src/script.js"></script>
+  </body>
+</html>
